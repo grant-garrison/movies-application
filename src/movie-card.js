@@ -14,6 +14,4 @@
          return Mdata
     };
 
-
-
 module.exports = {movieCard};
