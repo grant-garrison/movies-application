@@ -1,6 +1,6 @@
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+const $ = require( 'jquery' );
 /**
  * es6 modules and imports
  */
@@ -17,8 +17,10 @@ const {movieCard} = require('./movie-card.js');
 getMovies().then((movies) => {
   console.log('Here are all the movies:');
   movies.forEach(({title, rating, id}) => {
-    console.log(movieCard());
+    let cards = movieCard(title, rating);
+    console.log(cards);
     console.log(`id#${id} - ${title} - rating: ${rating}`);
+    $('#movies').append(cards);
   });
 }).catch((error) => {
   alert('Oh no! Something went wrong.\nCheck the console for details.');
