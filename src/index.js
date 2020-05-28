@@ -39,14 +39,14 @@ $('.enter').click(function (e) {
     let card = movieCard(title.val(), rating.val());
     $('#movies').append(card);
 
-  console.log(card);
-  console.log(title.val());
-  console.log(rating.val());
-  console.log('hello');
-  console.log($('.enter').html());
 });
 
 
+$(document).on('click','.delete', function() {
+    // $('.cardz').remove();
+    console.log($(this).parent());
+    console.log('test')
+});
 
 //----Loading Message----
 // $(document).ajaxStart(function(){
