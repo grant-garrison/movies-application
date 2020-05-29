@@ -3,11 +3,13 @@
     {
       "title": "Casablanca",
       "rating": "4",
+      "genre": "Drama",
       "id": 1
     },
     {
       "title": "Star Wars: A New Hope",
       "rating": "5",
+      "genre": "Fantasy",
       "id": 2
     }
   ]

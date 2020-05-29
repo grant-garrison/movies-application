@@ -13,15 +13,16 @@ sayHello('World');
 /**
  * require style imports
  */
-const {getMovies} = require('./api.js');
+const {getMovies, newMovies} = require('./api.js');
 const {movieCard} = require('./movie-card.js');
+
 
 $('#loader').show();
 getMovies().then((movies) => {
    $('#loader').show();
     console.log('Here are all the movies:');
-    movies.forEach(({title, rating, id}) => {
-        let cards = movieCard(title, rating);
+    movies.forEach(({title, rating, genre, id}) => {
+        let cards = movieCard(title, rating, genre);
         console.log(cards);
         console.log(`id#${id} - ${title} - rating: ${rating}`);
         function appendMovies() {
@@ -35,23 +36,33 @@ getMovies().then((movies) => {
     console.log(error);
 });
 
-
 $('.enter').click(function (e) {
-    $('#loader').show();
-    $('#movies').hide();
+    // $('#loader').show();
+    // $('#movies').hide();
     e.preventDefault();
-    var title = $('.title').keyup(function () {
+    // movies.forEach(({title, rating, genre, id}) => {
+        let titleObject = $('.title').keyup(function () {
     });
-    var rating = $('.rating').keyup(function () {
+    let ratingObject = $('.rating').keyup(function () {
     });
-    let card = movieCard(title.val(), rating.val());
-    function appendMovie() {
-        $('#movies').append(card);
-        $('#movies').show();
-        $('#loader').hide();
-    }
-    setTimeout(appendMovie, 2000)
+    let genreObject = $('.genre').keyup(function(){
+    });
+
+    let title = titleObject.val();
+    let rating = ratingObject.val();
+    let genre = genreObject.val();
+    // let card = movieCard(title.val(), rating.val(), genre.val());
+    // function appendMovie() {
+    //     $('#movies').append(card);
+    //     $('#movies').show();
+    //     $('#loader').hide();
+    // }
+    // setTimeout(appendMovie, 2000)
+        console.log(title, titleObject);
+    console.log(newMovies(title, rating, genre));
+    console.log(titleObject);
 });
+
 
 // functionality for the delete button
 $(document).on('click','.delete', function() {
