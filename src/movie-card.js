@@ -9,7 +9,7 @@
         Mdata += `<h5 class='card-text'>${rating}</h5>`;
         Mdata += `<h5 class="card-text">${genre}</h5>`;
         Mdata += `<h5 class="card-text" style="display: none;">${id}</h5>`;
-        Mdata += `<button type="button" data-id="${title},${rating},${genre},${id}" class="card text-danger delete">DELETE</button>`;
+        Mdata += `<button type="button" data-id="${id}" class="card text-danger delete">DELETE</button>`;
         Mdata += `</div>`;
         Mdata += `</div>`;
         Mdata += `</div>`;

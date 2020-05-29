@@ -72,7 +72,10 @@ $('.enter').click(function (e) {
 
 // functionality for the delete button
 $(document).on('click','.delete', function(e) {
-    console.log(e.target);
+    console.log((e.target));
+    let dataId = $(e.target).attr("data-id");
+    deleteMovies(dataId);
+    loadMovies();
 
         // deleteMovies(index);
 
