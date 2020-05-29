@@ -57,13 +57,7 @@ $('.enter').click(function (e) {
     let title = titleObject.val();
     let rating = ratingObject.val();
     let genre = genreObject.val();
-    // let card = movieCard(title.val(), rating.val(), genre.val());
-    // function appendMovie() {
-    //     $('#movies').append(card);
-    //     $('#movies').show();
-    //     $('#loader').hide();
-    // }
-    // setTimeout(appendMovie, 2000)
+
         console.log(title, titleObject);
     console.log(newMovies(title, rating, genre));
     console.log(titleObject);
@@ -72,18 +66,14 @@ $('.enter').click(function (e) {
 
 // functionality for the delete button
 $(document).on('click','.delete', function(e) {
-    console.log((e.target));
+    // console.log((e.target));
+    // target property pinpoints the event happening
     let dataId = $(e.target).attr("data-id");
+    //removes movie based on id
     deleteMovies(dataId);
+    //reloads movies
     loadMovies();
 
-        // deleteMovies(index);
-
-
-    // $('.cardz').remove();
-    //     $(this).parent().parent().remove();
-
-        // console.log('test')
 });
 
 
