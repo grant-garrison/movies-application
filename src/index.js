@@ -16,7 +16,10 @@ sayHello('World');
 const {getMovies, newMovies, deleteMovies} = require('./api.js');
 const {movieCard} = require('./movie-card.js');
 const {disableForm} = require('./disable');
+const {modal} = require('./modal.js');
 
+//modal
+// modal();
 // disableForm();
 $('#loader').show();
 
@@ -78,7 +81,8 @@ $(document).on('click','.delete', function(e) {
     let dataId = $(e.target).attr("data-id");
     //removes movie based on id
     deleteMovies(dataId);
-    $(this).prop("disabled",true);
+    // not sure how this is working but it is. Ask about this.
+    $('.delete').prop("disabled",true);
     //reloads movies
     loadMovies();
 
