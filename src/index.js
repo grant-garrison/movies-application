@@ -118,16 +118,29 @@ $(document).ready(function () {
             $('#movies').empty('');
             console.log('Here are all the movies:');
             movies.forEach(({title, rating, genre, id}) => {
+                var dropMovie = $('#menu').val();
                 var searchField = $('#search').val();
                 var expression = new RegExp(searchField, "i");
                 let cards = movieCard(title, rating, genre, id);
-                if(title.search(expression) != -1 || genre.search(expression) != -1 || rating.search(expression) != -1)
-                {
-                    $('#movies').append(movieCard(title, rating, genre, id));
+                if (dropMovie === '' || dropMovie === 'All movies') {
+                    if (title.search(expression) != -1 || genre.search(expression) != -1 || rating.search(expression) != -1) {
+                        $('#movies').append(movieCard(title, rating, genre, id));
+                    }
+                } else if (dropMovie === 'Title') {
+                    if (title.search(expression) != -1) {
+                        $('#movies').append(movieCard(title, rating, genre, id));
+                    }
+                } else if (dropMovie === 'Genre') {
+                    if (genre.search(expression) != -1) {
+                        $('#movies').append(movieCard(title, rating, genre, id));
+                    }
+                }  else if (dropMovie === 'Rating') {
+                    if (rating.search(expression) != -1) {
+                        $('#movies').append(movieCard(title, rating, genre, id));
+                    }
                 }
-                console.log(cards);
+                    console.log(cards);
                 console.log(`id#${id} - ${title} - rating: ${rating}`);
-
                 // function appendMovies() {
                 // enable();
                 // $('#movies').append(cards);
