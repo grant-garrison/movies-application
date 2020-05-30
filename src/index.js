@@ -85,8 +85,9 @@ $(document).on('click','.delete', function(e) {
     $('.delete').prop("disabled",true);
     //reloads movies
     loadMovies();
-
-
 });
 
-
+$('.menu-options').click(function(){
+    $("#menu").text($(this).text()); 
+    $("#menu").val($(this).text());
+});
