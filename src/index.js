@@ -15,11 +15,16 @@ sayHello('World');
  */
 const {getMovies, newMovies, deleteMovies} = require('./api.js');
 const {movieCard} = require('./movie-card.js');
+const {disableForm} = require('./disable');
 
-
+// disableForm();
 $('#loader').show();
 
 let loadMovies = () => {
+    let enable =() =>{ $('.enter').prop('disabled', false);};
+    $('.enter').on('click',function() {
+        $(this).prop("disabled",true);
+    });
     getMovies().then((movies) => {
         $('#movies').empty();
         $('#loader').show();
@@ -29,12 +34,14 @@ let loadMovies = () => {
             console.log(cards);
             console.log(`id#${id} - ${title} - rating: ${rating}`);
 
-            function appendMovies() {
+            // function appendMovies() {
+                enable();
                 $('#movies').append(cards);
                 $('#loader').hide();
-            }
+            // }
 
-            setTimeout(appendMovies, 2000);
+            // setTimeout(appendMovies, 2000);
+
         });
     }).catch((error) => {
         alert('Oh no! Something went wrong.\nCheck the console for details.');
@@ -71,8 +78,10 @@ $(document).on('click','.delete', function(e) {
     let dataId = $(e.target).attr("data-id");
     //removes movie based on id
     deleteMovies(dataId);
+    $(this).prop("disabled",true);
     //reloads movies
     loadMovies();
+
 
 });
 
