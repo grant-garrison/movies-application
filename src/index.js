@@ -94,23 +94,6 @@ $('.menu-options').click(function () {
     $("#menu").val($(this).text());
 });
 
-// $(document).ready(function(){
-//     $('#search').keyup(function(){
-//
-//             $('#movies').html('');
-//         var searchField = $('#search').val();
-//         var expression = new RegExp(searchField, "i");
-//         $.getJSON('/api/movies/', function(data){
-//             $(this).each(data, function(key, value){
-//                 if(value.title.search(expression) != -1 || value.genre.search(expression) != -1 || value.rating.search(expression) != -1)
-//                 {
-//                     console.log($('#movies').append(movieCard(title, rating, genre, id)));
-//                 }
-//             })
-//         })
-//     })
-//
-// })
 $(document).ready(function () {
     $('#search').keyup(function () {
         $('#movies').html('');
@@ -141,14 +124,6 @@ $(document).ready(function () {
                 }
                     console.log(cards);
                 console.log(`id#${id} - ${title} - rating: ${rating}`);
-                // function appendMovies() {
-                // enable();
-                // $('#movies').append(cards);
-                // $('#loader').hide();
-                // }
-
-                // setTimeout(appendMovies, 2000);
-
             });
         }).catch((error) => {
             alert('Oh no! Something went wrong.\nCheck the console for details.');
