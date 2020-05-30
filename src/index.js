@@ -94,23 +94,6 @@ $('.menu-options').click(function () {
     $("#menu").val($(this).text());
 });
 
-// $(document).ready(function(){
-//     $('#search').keyup(function(){
-//
-//             $('#movies').html('');
-//         var searchField = $('#search').val();
-//         var expression = new RegExp(searchField, "i");
-//         $.getJSON('/api/movies/', function(data){
-//             $(this).each(data, function(key, value){
-//                 if(value.title.search(expression) != -1 || value.genre.search(expression) != -1 || value.rating.search(expression) != -1)
-//                 {
-//                     console.log($('#movies').append(movieCard(title, rating, genre, id)));
-//                 }
-//             })
-//         })
-//     })
-//
-// })
 $(document).ready(function () {
     $('#search').keyup(function () {
         $('#movies').html('');
@@ -118,24 +101,29 @@ $(document).ready(function () {
             $('#movies').empty('');
             console.log('Here are all the movies:');
             movies.forEach(({title, rating, genre, id}) => {
+                var dropMovie = $('#menu').val();
                 var searchField = $('#search').val();
                 var expression = new RegExp(searchField, "i");
                 let cards = movieCard(title, rating, genre, id);
-                if(title.search(expression) != -1 || genre.search(expression) != -1 || rating.search(expression) != -1)
-                {
-                    $('#movies').append(movieCard(title, rating, genre, id));
+                if (dropMovie === '' || dropMovie === 'All movies') {
+                    if (title.search(expression) != -1 || genre.search(expression) != -1 || rating.search(expression) != -1) {
+                        $('#movies').append(movieCard(title, rating, genre, id));
+                    }
+                } else if (dropMovie === 'Title') {
+                    if (title.search(expression) != -1) {
+                        $('#movies').append(movieCard(title, rating, genre, id));
+                    }
+                } else if (dropMovie === 'Genre') {
+                    if (genre.search(expression) != -1) {
+                        $('#movies').append(movieCard(title, rating, genre, id));
+                    }
+                }  else if (dropMovie === 'Rating') {
+                    if (rating.search(expression) != -1) {
+                        $('#movies').append(movieCard(title, rating, genre, id));
+                    }
                 }
-                console.log(cards);
+                    console.log(cards);
                 console.log(`id#${id} - ${title} - rating: ${rating}`);
-
-                // function appendMovies() {
-                // enable();
-                // $('#movies').append(cards);
-                // $('#loader').hide();
-                // }
-
-                // setTimeout(appendMovies, 2000);
-
             });
         }).catch((error) => {
             alert('Oh no! Something went wrong.\nCheck the console for details.');
