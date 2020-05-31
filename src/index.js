@@ -17,10 +17,13 @@ const {getMovies, newMovies, deleteMovies} = require('./api.js');
 const {movieCard} = require('./movie-card.js');
 const {disableForm} = require('./disable');
 const {modal} = require('./modal.js');
+const {star} = require('./star.js');
 
 //modal
 // modal();
 // disableForm();
+star();
+
 $('#loader').show();
 
 let loadMovies = () => {
