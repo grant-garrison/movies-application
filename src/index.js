@@ -17,10 +17,13 @@ const {getMovies, newMovies, deleteMovies} = require('./api.js');
 const {movieCard} = require('./movie-card.js');
 const {disableForm} = require('./disable');
 const {modal} = require('./modal.js');
+const {star} = require('./star.js');
 
 //modal
 // modal();
 // disableForm();
+star();
+
 $('#loader').show();
 
 let loadMovies = () => {
@@ -65,6 +68,29 @@ $('.enter').click(function (e) {
     });
     let genreObject = $('.genre').keyup(function () {
     });
+    // let rating1 = $('#stars').children().on('click', function(e) {});
+    let rating1 = $('#stars').children().click(function () {
+    });
+    console.log(rating1);
+
+    console.log(rating1[0].className);
+    console.log(rating1[1].className);
+    console.log(rating1[2].className);
+    console.log(rating1[3].className);
+    console.log(rating1[4].className);
+
+
+
+    let starCount = () => {
+        for (let i = 0; i < rating1.length; i += 1) {
+            let count = 0;
+            if(rating1[i].className == 'star selected'){
+                count += 1;
+            }
+            console.log(count)
+        }
+    };
+    console.log(starCount());
 
     let title = titleObject.val();
     let rating = ratingObject.val();
@@ -88,12 +114,12 @@ $(document).on('click', '.delete', function (e) {
     //reloads movies
     loadMovies();
 });
-
+// dropdown becomes selected option
 $('.menu-options').click(function () {
     $("#menu").text($(this).text());
     $("#menu").val($(this).text());
 });
-
+// functionality for search bar
 $(document).ready(function () {
     $('#search').keyup(function () {
         $('#movies').html('');
@@ -117,12 +143,12 @@ $(document).ready(function () {
                     if (genre.search(expression) != -1) {
                         $('#movies').append(movieCard(title, rating, genre, id));
                     }
-                }  else if (dropMovie === 'Rating') {
+                } else if (dropMovie === 'Rating') {
                     if (rating.search(expression) != -1) {
                         $('#movies').append(movieCard(title, rating, genre, id));
                     }
                 }
-                    console.log(cards);
+                console.log(cards);
                 console.log(`id#${id} - ${title} - rating: ${rating}`);
             });
         }).catch((error) => {
