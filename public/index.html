@@ -13,6 +13,7 @@
     <form class="form-inline">
         <div class="input-group mb-3">
             <div class="input-group-prepend">
+<!--                dropdown button-->
                 <button class="btn btn-outline-secondary dropdown-toggle" id="menu" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                 <div class="dropdown-menu">
                     <option class="dropdown-item menu-options">Title</option>
@@ -22,69 +23,71 @@
                     <option class="dropdown-item menu-options">All movies</option>
                 </div>
             </div>
+<!--            search input-->
             <input class="form-control mr-sm-2" type="search" id="search" placeholder="Search" aria-label="Search">
         </div>
     </form>
 </nav>
 <!--modal button-->
-<button type="button" class="btn btn-info float-right" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Click
+<button type="button" class="btn btn-info float-right" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Click to add
     Movie
 </button>
 <!--div that holds movies-->
 <div class="row justify-content-center  text-white text-capitalize" id="movies">
-        <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-            <div class="card-header">Title</div>
-            <div class="card-body">
-                <h5 class="card-text">rating</h5>
-                <div class="form-group">
-                    <!--                        <label for="message-text" class="col-form-label">Message:</label>-->
-                    <!--                        <textarea class="form-control" id="message-text"></textarea>-->
-                    <!--                        <input type="text" value="rating" class="rating form-control">-->
-                    <div class='rating-stars pl-3'>
-                        <ul id='stars1' class="row list-unstyled">
-                            <li class='star' title='Poor' data-value='1'>
-                                <i class='fa fa-star fa-fw'></i>
-                            </li>
-                            <li class='star' title='Fair' data-value='2'>
-                                <i class='fa fa-star fa-fw'></i>
-                            </li>
-                            <li class='star' title='Good' data-value='3'>
-                                <i class='fa fa-star fa-fw'></i>
-                            </li>
-                            <li class='star' title='Excellent' data-value='4'>
-                                <i class='fa fa-star fa-fw'></i>
-                            </li>
-                            <li class='star' title='WOW!!!' data-value='5'>
-                                <i class='fa fa-star fa-fw'></i>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-    <!--            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>-->
-            </div>
-        </div>
+<!--    Reference for dynamic card-->
+<!--        <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">-->
+<!--            <div class="card-header">Title</div>-->
+<!--            <div class="card-body">-->
+<!--                <h5 class="card-text">rating</h5>-->
+<!--                <div class="form-group">-->
+<!--                    &lt;!&ndash;                        <label for="message-text" class="col-form-label">Message:</label>&ndash;&gt;-->
+<!--                    &lt;!&ndash;                        <textarea class="form-control" id="message-text"></textarea>&ndash;&gt;-->
+<!--                    &lt;!&ndash;                        <input type="text" value="rating" class="rating form-control">&ndash;&gt;-->
+<!--                    <div class='rating-stars pl-3'>-->
+<!--                        <ul id='stars1' class="row list-unstyled">-->
+<!--                            <li class='star' title='Poor' data-value='1'>-->
+<!--                                <i class='fa fa-star fa-fw'></i>-->
+<!--                            </li>-->
+<!--                            <li class='star' title='Fair' data-value='2'>-->
+<!--                                <i class='fa fa-star fa-fw'></i>-->
+<!--                            </li>-->
+<!--                            <li class='star' title='Good' data-value='3'>-->
+<!--                                <i class='fa fa-star fa-fw'></i>-->
+<!--                            </li>-->
+<!--                            <li class='star' title='Excellent' data-value='4'>-->
+<!--                                <i class='fa fa-star fa-fw'></i>-->
+<!--                            </li>-->
+<!--                            <li class='star' title='WOW!!!' data-value='5'>-->
+<!--                                <i class='fa fa-star fa-fw'></i>-->
+<!--                            </li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--    &lt;!&ndash;            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>&ndash;&gt;-->
+<!--            </div>-->
+<!--        </div>-->
 </div>
 <!--modal div-->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
      aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-sm">
         <div class="modal-content bg-dark text-white">
+<!--            modal header-->
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Add your movie then click!</h5>
+                <h5 class="modal-title text-capitalize" id="exampleModalLabel">Add your movie then click!</h5>
+<!--                modal close button-->
                 <button type="button" class="close " data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
+<!--            modal body-->
             <div class="modal-body">
                 <form class="usermovie" id="disable-input">
                     <div class="form-group">
-                        <!--                        <label for="recipient-name" class="col-form-label">Recipient:</label>-->
-                        <input type="text" value="Add your movie" class="title form-control" id="recipient-name">
+                        <input type="text" placeholder="Add your movie" class="title form-control" id="recipient-name">
                     </div>
+<!--                    star rating for modal-->
                     <div class="form-group">
-                        <!--                        <label for="message-text" class="col-form-label">Message:</label>-->
-                        <!--                        <textarea class="form-control" id="message-text"></textarea>-->
-<!--                        <input type="text" value="rating" class="rating form-control">-->
                         <div class='rating-stars pl-3'>
                             <ul id='stars' class="row list-unstyled">
                                 <li class='star' title='Poor' data-value='1'>
@@ -105,13 +108,13 @@
                             </ul>
                         </div>
                     </div>
+<!--                    genre input-->
                     <div class="form-group">
-                        <!--                        <label for="message-text" class="col-form-label">Message:</label>-->
-                        <!--                        <textarea class="form-control" id="message-text"></textarea>-->
-                        <input type="text" value="genre" class="genre form-control">
+                        <input type="text" placeholder="genre" class="genre form-control">
                     </div>
                 </form>
             </div>
+<!--            modal footer with close and click movie button-->
             <div class="modal-footer">
                 <button type="button" class="text-danger" data-dismiss="modal">Close</button>
                 <button type="button" class="btn-primary btn-info enter" id="dis">Click Movie</button>
@@ -120,24 +123,10 @@
         </div>
     </div>
 </div>
+<!--loader gif-->
 <div class="row d-flex justify-content-center">
 <div class="loader" id="loader" style="display:none;"></div>
 </div>
-<!--<form class="usermovie">-->
-<!--    <div>-->
-<!--&lt;!&ndash;        <input type="text" value="Add your movie" class="title form-control" id="recipient-name">&ndash;&gt;-->
-<!--    </div>-->
-<!--    <div>-->
-<!--        <input type="text" value="rating" class="rating form-control">-->
-<!--    </div>-->
-<!--    <div>-->
-<!--        <input type="text" value="genre" class="genre">-->
-<!--    </div>-->
-<!--    <div>-->
-<!--        <input type="button" value="submit" class="enter">-->
-<!--        <button type="button" class="enter" id="dis"></button>-->
-<!--    </div>-->
-<!--</form>-->
 <script src="./main.js"></script>
 </body>
 </html>

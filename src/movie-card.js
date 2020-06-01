@@ -108,13 +108,12 @@ let starRating = (rating) =>{
         Mdata += `<div class="col-sm-3  cardz m-2 bg-dark >`;
         Mdata += `<div class="card "  style="width: 18rem ;">`;
         Mdata += `<div class='card-body bg-dark'>`;
-        Mdata += `<div class='card-header'>${title}</div>`;
+        Mdata += `<h5 class='card-header'>${title}</h5>`;
         Mdata += `<img src="/img/movie_poster.jpg" class="card-img-top" alt="...">`;
         Mdata += stars;
-        Mdata += `filler function`;
         Mdata += `<h5 class="card-text">${genre}</h5>`;
         Mdata += `<h5 class="card-text" style="display: none;">${id}</h5>`;
-        Mdata += `<button type="button" data-id="${id}" class="card text-danger delete">DELETE</button>`;
+        Mdata += `<button type="button" data-id="${id}" class="card text-danger delete float-right mb-3">DELETE</button>`;
         Mdata += `</div>`;
         Mdata += `</div>`;
         Mdata += `</div>`;

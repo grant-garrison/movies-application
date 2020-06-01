@@ -13,16 +13,34 @@
       "id": 2
     },
     {
-      "title": "Add your movie",
+      "title": "John Wick: chapter 3",
       "rating": "5",
-      "genre": "genre",
+      "genre": "action",
       "id": 3
     },
     {
-      "title": "Add your movie",
-      "rating": "4",
-      "genre": "genre",
+      "title": "IT: chapter 2",
+      "rating": "3",
+      "genre": "Horror",
       "id": 4
+    },
+    {
+      "title": "Jumanji: The Next Level",
+      "rating": "2",
+      "genre": "Action Comedy",
+      "id": 5
+    },
+    {
+      "title": "The Room",
+      "rating": "1",
+      "genre": "Drama Comedy? ",
+      "id": 6
+    },
+    {
+      "title": "Movie",
+      "rating": "3",
+      "genre": "Comedy",
+      "id": 7
     }
   ]
 }
