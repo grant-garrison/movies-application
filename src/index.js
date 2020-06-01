@@ -82,18 +82,18 @@ $('.enter').click(function (e) {
 
 
     let starCount = () => {
+        let count = 0;
         for (let i = 0; i < rating1.length; i += 1) {
-            let count = 0;
             if(rating1[i].className == 'star selected'){
                 count += 1;
             }
-            console.log(count)
         }
+        return count;
     };
     console.log(starCount());
 
     let title = titleObject.val();
-    let rating = ratingObject.val();
+    let rating = starCount().toString();
     let genre = genreObject.val();
 
     console.log(title, titleObject);
@@ -156,4 +156,6 @@ $(document).ready(function () {
             console.log(error);
         });
     })
+
 });
+

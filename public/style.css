@@ -2,6 +2,9 @@
 html, body {
     height: 100%;
 }
+body {
+    background-color: #003366;
+}
 
 .container {
     position: relative;
@@ -35,4 +38,9 @@ html, body {
 .rating-stars ul > li.star.selected > i.fa {
     color:#FF912C;
 }
+
+.navbar {
+    background-color: #003366;
+}
+
 
