@@ -14,7 +14,7 @@ sayHello('World');
  * require style imports
  */
 const {getMovies, newMovies, deleteMovies} = require('./api.js');
-const {movieCard} = require('./movie-card.js');
+const {movieCard, starRating} = require('./movie-card.js');
 const {disableForm} = require('./disable');
 const {modal} = require('./modal.js');
 const {star} = require('./star.js');

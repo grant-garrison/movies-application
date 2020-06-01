@@ -11,6 +11,18 @@
       "rating": "5",
       "genre": "Fantasy",
       "id": 2
+    },
+    {
+      "title": "Add your movie",
+      "rating": "5",
+      "genre": "genre",
+      "id": 3
+    },
+    {
+      "title": "Add your movie",
+      "rating": "4",
+      "genre": "genre",
+      "id": 4
     }
   ]
 }
